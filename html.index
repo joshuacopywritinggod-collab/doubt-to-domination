@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doubt to Domination | The Neurological Reset</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'], serif: ['Playfair Display', 'serif'] },
+                    colors: { gold: { 400: '#FBBF24', 500: '#F59E0B', 600: '#D97706' }, dark: '#0a0a0a' }
+                }
+            }
+        }
+    </script>
+    <style>
+        ::selection { background: #D97706; color: #fff; }
+        .glass-panel { background: rgba(20, 20, 20, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.05); }
+        .toast-enter { animation: slideIn 0.5s forwards; }
+        .toast-exit { animation: slideOut 0.5s forwards; }
+        @keyframes slideIn { from { transform: translateX(100%); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+        @keyframes slideOut { from { transform: translateX(0); opacity: 1; } to { transform: translateX(100%); opacity: 0; } }
+    </style>
+</head>
+<body class="bg-dark text-gray-300 font-sans antialiased leading-relaxed">
+
+    <!-- CART TOAST NOTIFICATION -->
+    <div id="cart-toast" class="fixed top-5 right-5 z-[100] bg-green-600 text-white px-6 py-4 rounded shadow-2xl hidden items-center gap-3 font-semibold tracking-wide">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+        <span id="toast-message">Item Added to Cart!</span>
+    </div>
+
+    <!-- ==========================================
+         STEP 1: THE FRONT-END LANDING PAGE
+    =========================================== -->
+    <div id="step-landing" class="block">
+        <!-- Hero Section -->
+        <section class="relative min-h-[90vh] flex flex-col justify-center overflow-hidden border-b border-gray-900">
+            <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-gray-800 via-dark to-dark z-0 opacity-60"></div>
+            
+            <div class="relative z-10 max-w-5xl mx-auto px-6 pt-20 pb-12 flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-5/12 order-2 md:order-1 relative group">
+                    <div class="absolute inset-0 bg-gold-600 blur-[100px] opacity-20 rounded-full group-hover:opacity-40 transition duration-700"></div>
+                    <img src="https://i.ibb.co/R4dYn3m6/IMG-20260428-081518.jpg" alt="Doubt to Domination" class="relative z-10 w-full max-w-[380px] mx-auto shadow-2xl border border-gray-800 rounded-r-md">
+                </div>
+
+                <div class="md:w-7/12 order-1 md:order-2 text-center md:text-left">
+                    <div class="inline-block border border-gold-600/30 bg-gold-500/10 text-gold-400 uppercase tracking-widest text-[10px] font-bold px-3 py-1 mb-6 rounded-sm">
+                        For Entrepreneurs, Coaches & Visionaries
+                    </div>
+                    <h1 class="text-4xl md:text-6xl font-serif font-bold text-white leading-[1.1] mb-6 tracking-tight">
+                        Shatter The Illusion <br>
+                        <span class="italic font-light text-gold-500">Of Limitations.</span>
+                    </h1>
+                    <p class="text-lg md:text-xl font-light mb-8 text-gray-400 leading-relaxed">
+                        Stop grinding for pennies. Discover the <strong class="text-white font-normal">EQSP Framework</strong>—the neurological reset designed to kill the "payroll mentality" and trigger biological attraction in your market.
+                    </p>
+                    <button onclick="startCheckout()" class="inline-block bg-white text-black font-bold uppercase tracking-widest text-sm px-10 py-4 hover:bg-gold-500 hover:text-white transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-[0_0_30px_rgba(245,158,11,0.3)]">
+                        Get The Manual Now (₦15,000)
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Letter -->
+        <section class="py-20 relative">
+            <div class="max-w-3xl mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-serif text-white mb-8 leading-tight">
+                    Are you physically busy... just to escape the hard labor of <span class="italic text-gold-500">actual thinking?</span>
+                </h2>
+                <div class="space-y-6 text-[17px] font-light text-gray-300">
+                    <p>Let’s face it—we live in a world that glorifies hustle and doing it all by yourself. <em>"Grind harder."</em> Sound familiar?</p>
+                    <p>But here is a sobering truth: <strong>Not every mistake is necessary, and not every lesson has to come from personal pain.</strong></p>
+                    <div class="pl-6 border-l-4 border-gold-600 my-8 py-2">
+                        <p class="text-xl font-serif text-white italic">"You did what you're supposed to do. All those late nights... and yet, you got no compensation. You are functioning from the payroll mentality."</p>
+                    </div>
+                    <p>The "Payroll Mentality" is a virus. The market does not reward hard work. <strong class="text-white">The market rewards perceived value.</strong> Money isn’t the paper in your hand. Money is a biological response. Until you learn how to trigger that response in the human brain, you will continue to bleed time and budget trying to figure it out on your own.</p>
+                </div>
+                <div class="mt-16 text-center">
+                    <button onclick="startCheckout()" class="w-full md:w-auto bg-gold-600 text-white font-bold uppercase tracking-widest text-sm px-12 py-5 hover:bg-white hover:text-black transition-all duration-300 shadow-xl">
+                        Unlock The Strategy for ₦15,000
+                    </button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ==========================================
+         STEP 2: UPSELL 1 (THE CLARITY SESSION)
+    =========================================== -->
+    <div id="step-upsell-1" class="hidden min-h-screen py-20">
+        <div class="max-w-3xl mx-auto px-6">
+            <!-- Progress Bar -->
+            <div class="w-full bg-gray-800 h-2 mb-8 rounded-full"><div class="bg-gold-500 h-2 w-1/3 rounded-full"></div></div>
+            
+            <h2 class="text-red-500 font-bold uppercase tracking-widest text-sm mb-4 text-center">Wait! Your Order Is Not Complete...</h2>
+            <h1 class="text-4xl md:text-5xl font-serif text-white text-center leading-tight mb-8">
+                Do Not Read This Book <br><span class="italic text-gold-500">Without A Surgeon.</span>
+            </h1>
+
+            <div class="glass-panel p-8 md:p-12 text-lg font-light space-y-6 text-gray-300">
+                <p>You now own the manual to shatter your limitations. You are about to discover the EQSP Framework.</p>
+                <p>But here is the brutal truth: <strong>Reading about neurobiology doesn’t make you a brain surgeon.</strong></p>
+                <p>Right now, you are about to fall back into the exact trap I warned you about on Page 186: <em>working hard on what's not working just to avoid the heavy lifting of thinking.</em> Translating these concepts into your specific business takes precision.</p>
+                <p class="text-white font-medium text-xl">Let me do the heavy lifting for you.</p>
+                <p>In the <strong>60-Minute EQSP Clarity Session</strong>, I will personally look at your business, define your high-ticket Customer Avatar, engineer your biological messaging angles, and fit the EQSP framework directly over your offer.</p>
+                <p>You can spend the next 6 months guessing... or we can map your entire domination ecosystem in 60 minutes.</p>
+
+                <!-- Psychological Buttons -->
+                <div class="mt-12 space-y-4">
+                    <button onclick="acceptUpsell1()" class="w-full bg-green-600 text-white font-bold uppercase tracking-widest text-sm md:text-base px-6 py-5 hover:bg-green-500 transition shadow-[0_0_20px_rgba(22,163,74,0.3)] border-b-4 border-green-800 rounded">
+                        YES! I Want The Shortcut.<br>
+                        <span class="text-xs font-normal capitalize">Add the 60-Min Clarity Session to my order (+₦50,000)</span>
+                    </button>
+                    
+                    <button onclick="declineUpsell1()" class="w-full text-center text-gray-500 text-sm hover:text-gray-300 underline underline-offset-4 pt-4 transition">
+                        No thanks. I prefer to struggle, guess my way through it, and waste months of trial and error on my own.
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================
+         STEP 3: DOWNSELL (THE VAULT)
+    =========================================== -->
+    <div id="step-downsell" class="hidden min-h-screen py-20">
+        <div class="max-w-3xl mx-auto px-6">
+            <div class="w-full bg-gray-800 h-2 mb-8 rounded-full"><div class="bg-gold-500 h-2 w-1/2 rounded-full"></div></div>
+            
+            <h1 class="text-4xl md:text-5xl font-serif text-white text-center leading-tight mb-8">
+                I get it. You want to build <br><span class="italic text-gold-500">the machine yourself.</span>
+            </h1>
+
+            <div class="glass-panel p-8 md:p-12 text-lg font-light space-y-6 text-gray-300">
+                <p>You have an independent soul. You want to map your own EQSP ecosystem without my 1-on-1 help.</p>
+                <p>But please, <strong>do not start from a blank screen.</strong> That is the definition of the 'payroll mentality'—wasting time reinventing the wheel.</p>
+                <p>If you are going to execute this yourself, you need <strong class="text-white">The Domination Vault.</strong></p>
+                <p>This is my private arsenal. It includes the exact Customer Avatar Worksheets, the Biological Copywriting Prompts, and the EQSP Checklist I use for my elite clients. It removes the guesswork and ensures you don't miss a single neuro-trigger.</p>
+                <p>It's a fraction of the cost of my time, but it gives you the exact blueprint to do it yourself.</p>
+
+                <!-- Psychological Buttons -->
+                <div class="mt-12 space-y-4">
+                    <button onclick="acceptDownsell()" class="w-full bg-gold-600 text-white font-bold uppercase tracking-widest text-sm md:text-base px-6 py-5 hover:bg-gold-500 transition shadow-[0_0_20px_rgba(217,119,6,0.3)] border-b-4 border-gold-800 rounded">
+                        YES! Give Me The Vault.<br>
+                        <span class="text-xs font-normal capitalize">Add the DIY Templates & Prompts to my order (+₦25,000)</span>
+                    </button>
+                    
+                    <button onclick="declineDownsell()" class="w-full text-center text-gray-500 text-sm hover:text-gray-300 underline underline-offset-4 pt-4 transition">
+                        No, I prefer staring at a blank screen and doing things the hard, slow way. Take me to my book.
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================
+         STEP 4: UPSELL 2 (DFY EXECUTION)
+    =========================================== -->
+    <div id="step-upsell-2" class="hidden min-h-screen py-20">
+        <div class="max-w-3xl mx-auto px-6">
+            <div class="w-full bg-gray-800 h-2 mb-8 rounded-full"><div class="bg-gold-500 h-2 w-5/6 rounded-full"></div></div>
+            
+            <h2 class="text-gold-500 font-bold uppercase tracking-widest text-sm mb-4 text-center">One Last Thing...</h2>
+            <h1 class="text-4xl md:text-5xl font-serif text-white text-center leading-tight mb-8">
+                Let's Bend Reality <br><span class="italic text-gold-500">To Your Will.</span>
+            </h1>
+
+            <div class="glass-panel p-8 md:p-12 text-lg font-light space-y-6 text-gray-300">
+                <p>You have the strategy. But as I wrote in Chapter 16: <em>"Nothing ever comes by waiting. Time never brings anything to fruition that isn't developing."</em></p>
+                <p>Execution takes time. Setting up the funnels, writing the ad copy, structuring the online presence... it is exhausting. And every hour you spend tinkering with tech is an hour you aren't closing high-ticket deals.</p>
+                <p class="text-white font-medium text-xl">You are a visionary. You shouldn't be doing grunt work.</p>
+                <p>Welcome to the <strong>Done-For-You Execution Stage.</strong></p>
+                <p>My team and I will take your EQSP strategy and physically build your ecosystem. We will set up your elite online presence and launch the Facebook/Instagram ads engineered with neurobiological triggers.</p>
+                <p>We will build the exact machine that has your ideal clients bypassing your sales page and directly asking for your account number. Let’s collapse time and launch your domination in 30 days.</p>
+
+                <!-- Psychological Buttons -->
+                <div class="mt-12 space-y-4">
+                    <button onclick="acceptUpsell2()" class="w-full bg-green-600 text-white font-bold uppercase tracking-widest text-sm md:text-base px-6 py-5 hover:bg-green-500 transition shadow-[0_0_20px_rgba(22,163,74,0.3)] border-b-4 border-green-800 rounded">
+                        YES! Build My Ecosystem.<br>
+                        <span class="text-xs font-normal capitalize">Add the DFY 30-Day Launch to my order (+₦50,000)</span>
+                    </button>
+                    
+                    <button onclick="declineUpsell2()" class="w-full text-center text-gray-500 text-sm hover:text-gray-300 underline underline-offset-4 pt-4 transition">
+                        No thanks, I will spend hours fighting with tech and running my own ads instead of serving clients.
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================
+         JAVASCRIPT FUNNEL LOGIC
+    =========================================== -->
+    <script>
+        // Set your WhatsApp Number Here (Include country code, no + or spaces)
+        const WHATSAPP_NUMBER = "2349039641174"; // <-- CHANGE THIS
+
+        // The Cart State
+        let cart = {
+            book: true,
+            upsell1: false,
+            downsell: false,
+            upsell2: false
+        };
+
+        const prices = {
+            book: 15000,
+            upsell1: 50000,
+            downsell: 25000,
+            upsell2: 50000
+        };
+
+        // Navigation Helper
+        function showSection(sectionId) {
+            document.getElementById('step-landing').classList.add('hidden');
+            document.getElementById('step-upsell-1').classList.add('hidden');
+            document.getElementById('step-downsell').classList.add('hidden');
+            document.getElementById('step-upsell-2').classList.add('hidden');
+            
+            document.getElementById(sectionId).classList.remove('hidden');
+            window.scrollTo(0, 0);
+        }
+
+        // Toast Notification Helper
+        function showToast(message) {
+            const toast = document.getElementById('cart-toast');
+            document.getElementById('toast-message').innerText = message;
+            
+            toast.classList.remove('hidden', 'toast-exit');
+            toast.classList.add('flex', 'toast-enter');
+            
+            setTimeout(() => {
+                toast.classList.remove('toast-enter');
+                toast.classList.add('toast-exit');
+                setTimeout(() => toast.classList.add('hidden'), 500);
+            }, 2500);
+        }
+
+        // --- FUNNEL ACTIONS ---
+
+        function startCheckout() {
+            showSection('step-upsell-1');
+        }
+
+        function acceptUpsell1() {
+            cart.upsell1 = true;
+            showToast("Clarity Session Added!");
+            setTimeout(() => showSection('step-upsell-2'), 1200); // Skips downsell
+        }
+
+        function declineUpsell1() {
+            showSection('step-downsell');
+        }
+
+        function acceptDownsell() {
+            cart.downsell = true;
+            showToast("The Vault Added!");
+            setTimeout(() => showSection('step-upsell-2'), 1200);
+        }
+
+        function declineDownsell() {
+            // If they say no to the downsell, take them straight to WhatsApp to pay for just the book.
+            checkoutToWhatsApp();
+        }
+
+        function acceptUpsell2() {
+            cart.upsell2 = true;
+            showToast("DFY Execution Added!");
+            setTimeout(() => checkoutToWhatsApp(), 1200);
+        }
+
+        function declineUpsell2() {
+            checkoutToWhatsApp();
+        }
+
+        // --- FINALIZE ON WHATSAPP ---
+        function checkoutToWhatsApp() {
+            let total = prices.book;
+            let items = ["👉 Doubt to Domination Manual (₦15,000)"];
+
+            if(cart.upsell1) { 
+                total += prices.upsell1; 
+                items.push("👉 EQSP 60-Min Clarity Session (₦50,000)"); 
+            }
+            if(cart.downsell) { 
+                total += prices.downsell; 
+                items.push("👉 The Domination Vault (₦25,000)"); 
+            }
+            if(cart.upsell2) { 
+                total += prices.upsell2; 
+                items.push("👉 DFY 30-Day Execution (₦50,000)"); 
+            }
+
+            let text = `Hello Joshua! I'm ready to dominate my market. Here is my order:\n\n${items.join('\n')}\n\n*TOTAL DUE: ₦${total.toLocaleString()}*\n\nPlease send me the account details to secure my access.`;
+            
+            let url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
+            window.location.href = url;
+        }
+    </script>
+</body>
+</html>
